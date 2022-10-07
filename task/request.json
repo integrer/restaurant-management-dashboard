@@ -1,0 +1,63 @@
+{
+    "args": {
+        "days": "20220128"
+    },
+    "elements": [{
+            "fields": [
+                "day"
+            ]
+        },
+        {
+            "path": "air.dailyPayments",
+            "fields": [
+                "total"
+            ],
+            "refs": [
+                [
+                    "id_payment",
+                    "name"
+                ],
+                [
+                    "id_payment",
+                    "ml_name"
+                ]
+            ]
+        },
+        {
+            "path": "air.dailyCategories",
+            "fields": [
+                "total"
+            ],
+            "refs": [
+                [
+                    "id_category",
+                    "name"
+                ]
+            ]
+        },
+        {
+            "path": "air.hourlySales",
+            "fields": [
+                "hour",
+                "count",
+                "total"
+            ]
+        },
+        {
+            "path": "air.dailyWaiters",
+            "fields": [
+                "total",
+                "count"
+            ],
+            "refs": [
+                [
+                    "id_waiter",
+                    "name"
+                ]
+            ]
+        }
+    ],
+    "orderBy": [{
+        "field": "day"
+    }]
+}
