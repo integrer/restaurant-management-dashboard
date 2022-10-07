@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES6",
+    "moduleResolution": "Node",
+    "strict": true,
+    "strictNullChecks": true,
+    "noStrictGenericChecks": false,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "baseUrl": "./",
+    "lib": ["ESNext", "DOM"],
+    "types": ["node"],
+    "jsx": "react",
+    "paths": {
+      "@app/*": ["src/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx", "node_modules"]
+}
