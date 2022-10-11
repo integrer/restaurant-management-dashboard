@@ -1,7 +1,7 @@
 {
-  "name": "pokeapi-client",
+  "name": "restaurant-management-dashboard",
   "version": "0.0.1",
-  "description": "pokeapi client powered by react",
+  "description": "restaurant management dashboard powered by react",
   "main": "index.js",
   "scripts": {
     "prebuild": "npm run clean",

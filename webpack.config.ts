@@ -15,7 +15,7 @@ const plugins = [
   new CopyPlugin({ patterns: [{ from: path.resolve(__dirname, 'assets'), to: 'assets' }] }),
   new HtmlWebpackPlugin({
     template: './views/main.ejs',
-    title: 'Pokeapi client',
+    title: 'Restaurant management dashboard',
     templateParameters: { version: VERSION },
     minify: { removeComments: false },
   }),
