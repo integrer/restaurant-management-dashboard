@@ -9,6 +9,8 @@
     "noEmit": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
     "isolatedModules": true,
     "baseUrl": "./",
     "lib": ["ESNext", "DOM"],
