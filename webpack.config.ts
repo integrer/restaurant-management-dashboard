@@ -1,5 +1,5 @@
 import path from 'path';
-import { Configuration } from 'webpack';
+import { Configuration, DefinePlugin } from 'webpack';
 import 'webpack-dev-server';
 import CopyPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -11,14 +11,17 @@ import { IS_DEV } from './src/config';
 // noinspection ES6PreferShortImport
 import { WEBPACK_PORT, VERSION } from './src/config/server';
 
+const publicPath = process.env.PUBLIC_PATH || '/';
+
 const plugins = [
   new CopyPlugin({ patterns: [{ from: path.resolve(__dirname, 'assets'), to: 'assets' }] }),
   new HtmlWebpackPlugin({
     template: './views/main.ejs',
     title: 'Restaurant management dashboard',
-    templateParameters: { version: VERSION },
+    templateParameters: { version: VERSION, publicPath },
     minify: { removeComments: false },
   }),
+  new DefinePlugin({ 'process.env.PUBLIC_PATH': JSON.stringify(publicPath) }),
   // new BundleAnalyzerPlugin(),
 ];
 
@@ -32,7 +35,7 @@ const config: Configuration = {
     path: path.join(__dirname, 'dist'),
     filename: `[name]-[chunkhash]-bundle.js`,
     chunkFilename: '[name]-[chunkhash]-bundle.js',
-    publicPath: '/',
+    publicPath,
   },
   resolve: {
     alias: {

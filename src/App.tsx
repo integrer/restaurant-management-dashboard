@@ -15,7 +15,7 @@ export interface IAppProps {
 
 export default function App({ store }: IAppProps) {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_PATH || '/'}>
       <ReduxProvider store={store}>
         <SagaToolsContext.Provider value={store}>
           <CssBaseline />

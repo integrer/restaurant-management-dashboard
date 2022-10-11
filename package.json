@@ -8,7 +8,7 @@
     "prebuild": "npm run clean",
     "build": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"tsconfig.webpackCfg.json\" webpack --mode production",
     "clean": "rimraf dist",
-    "predeploy": "npm run build",
+    "predeploy": "cross-env PUBLIC_PATH=\"/restaurant-management-dashboard/\" npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "cross-env TS_NODE_PROJECT=\"tsconfig.webpackCfg.json\" webpack serve",
     "lint": "eslint 'src/**/*.{j,t}s{,x}'",
